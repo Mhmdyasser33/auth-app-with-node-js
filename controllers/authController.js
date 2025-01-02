@@ -62,7 +62,7 @@ const login = async (req , res)=>{
         // check password entered by user with password stored in db
         const isPasswordMatch = await bcrypt.compare(password , foundedUser.password) ; 
         if(!isPasswordMatch){
-            res.status(400).json({message : "Wrong password"}) ; 
+            return res.status(400).json({message : "Wrong password"}) ; 
         }
         const accessToken = await jwt.sign({
             userInfo : {

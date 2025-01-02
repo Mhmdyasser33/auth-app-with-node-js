@@ -21,7 +21,7 @@ const verifyJWT = async(req , res , next) =>{
         })
         next() 
     }catch(err){
-      res.status(400).json({message : `error in verify token ${err}`})
+      return es.status(400).json({message : `error in verify token ${err}`})
     }
 }
 module.exports = verifyJWT ; 
