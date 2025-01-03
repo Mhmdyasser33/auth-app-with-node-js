@@ -1,5 +1,4 @@
 const User = require("../models/user")
-
 const getAllUser = async (req , res)=>{
     try{
       const users = await User.find({}).select("-password") // to prevent password from appearance using - and attribute name
@@ -11,4 +10,5 @@ const getAllUser = async (req , res)=>{
       res.status(500).json({message : err.message}) ;
     }
 }
+
 module.exports = {getAllUser,}

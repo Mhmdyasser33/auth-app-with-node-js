@@ -11,12 +11,10 @@ const port = process.env.PORT || 5000 ;
 const rootRoute = require("./routes/rootRoute")
 const authRoute = require("./routes/authRoute") ; 
 const userRoute = require("./routes/userRoute") ;
-
-
 // first connect db
 connectDb()
-// set cors 
-app.use(cors(corsOptions)) ; 
+// set cors
+app.use(cors(corsOptions)) ;
 app.use(cookieParser()) 
 // to convert | parse date to json 
 app.use(express.json()) 
